@@ -14,7 +14,9 @@ class Piece
 
 	def slide_directions
 		#check spot for empty
-		if @player_id == "White"
+		if self.king
+			[[-1,-1],[-1,+1],[1,-1],[1,+1]]
+		elsif @player_id == "White"
 			[[-1,-1],[-1,+1]]
 		elsif @player_id == "Black"
 			[[1,-1],[1,+1]]
@@ -24,7 +26,9 @@ class Piece
 	def jump_directions
 		#check first spot for enemy
 		#check second spot for empty
-		if @player_id == "White"
+		if self.king
+			[[[-1,-1],[-2,-2]],[[-1,+1],[-2,+2]],[[1,-1],[2,-2]],[[1,+1],[2,+2]]]
+		elsif @player_id == "White"
 			[[[-1,-1],[-2,-2]],[[-1,+1],[-2,+2]]]
 		elsif @player_id == "Black"
 			[[[1,-1],[2,-2]],[[1,+1],[2,+2]]]
@@ -34,11 +38,18 @@ class Piece
 	def dup_piece
 		new_piece = Piece.new(self.location)
 		new_piece.player_id = self.player_id
+		new_piece.king = self.king
+		@slide_directions = slide_directions
+		@jump_directions = jump_directions
 		new_piece
 	end
 
 	def render
-		player_id == "White" ? "W|" : "B|"
+		if self.king
+			player_id == "White" ? "kW" : "kB"
+		else
+			player_id == "White" ? "W " : "B "
+		end
 	end
 
 	def perform_moves(move_seq, board)
@@ -51,6 +62,12 @@ class Piece
 		else
 			[]
 		end
+
+		if self.player_id == "White" && self.location[0] == 0
+			self.king = true
+		elsif self.player_id == "Black" && self.location[0] == 7
+			self.king = true
+		end
 	end
 
 
@@ -61,7 +78,7 @@ class Piece
 		#returns true if perform_moves! succeeds
 		#returns false if perform_moves! raises an error
 		#must catch the error!
-		board_clone = board.dup # must write custome dup method for board!!!!
+		board_clone = board.dup 
 
 		begin
 			perform_moves!(move_seq, board_clone)
