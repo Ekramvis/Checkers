@@ -1,7 +1,7 @@
 Checkers
 ========
 
-This game of checkers was completed as one-day solo project in week 2 of App Academy.  
+This game of checkers was completed as a one-day solo project in week 2 of App Academy.  
 
 ###Goals
 0. Create a playable checkers game
