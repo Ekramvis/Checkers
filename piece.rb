@@ -183,5 +183,5 @@ class Piece
 	
 
 
-end #end Piece class
+end
 

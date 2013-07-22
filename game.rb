@@ -48,9 +48,7 @@ class Game
 		true
 	end
 
-
-
-end # end Game class
+end 
 
 
 Game.new

@@ -18,7 +18,8 @@ class Player
 		
 		puts 
 		puts "Enter the coordinates of the next space to move to."
-		puts "Hit 'Enter' after every move you want to make"
+		puts "Hit 'Enter' after every move you want to make."
+    puts ""
 		puts "When you are finished moving, hit 'Enter' on a blank line." 
 		while true
 			move = gets.chomp
@@ -36,7 +37,6 @@ class Player
 	def parse_input(move)
 		move = move.split("")
 		move.map! { |coord| converter(coord) }
-		p move
 		[move[1],move[0]]
 	end
 

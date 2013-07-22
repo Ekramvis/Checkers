@@ -15,15 +15,15 @@ class Board
     @grid[0][5] = Piece.new([0, 5])
     @grid[0][7] = Piece.new([0, 7])
     	
-  #   	@grid[1][0] = Piece.new([1, 0])
-  #   	@grid[1][2] = Piece.new([1, 2])
-  #   	@grid[1][4] = Piece.new([1, 4])
-  #   	@grid[1][6] = Piece.new([1, 6])
+    @grid[1][0] = Piece.new([1, 0])
+    @grid[1][2] = Piece.new([1, 2])
+    @grid[1][4] = Piece.new([1, 4])
+    @grid[1][6] = Piece.new([1, 6])
 
-		# @grid[2][1] = Piece.new([2, 1])
-  #   	@grid[2][3] = Piece.new([2, 3])
-  #   	@grid[2][5] = Piece.new([2, 5])
-  #   	@grid[2][7] = Piece.new([2, 7])
+		@grid[2][1] = Piece.new([2, 1])
+    @grid[2][3] = Piece.new([2, 3])
+    @grid[2][5] = Piece.new([2, 5])
+    @grid[2][7] = Piece.new([2, 7])
 
     	#player 2
     @grid[7][0] = Piece.new([7, 0])
@@ -102,6 +102,6 @@ class Board
 		end
 	end
 
-end #end Board class
+end
 
 
