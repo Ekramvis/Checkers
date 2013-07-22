@@ -1,8 +1,13 @@
 Checkers
 ========
 
-This was done as one-day solo project in week 2 of App Academy. It the first significant solo project of the course. 
+This game of checkers was completed as one-day solo project in week 2 of App Academy.  
 
-The goals of the project were to pratice object-oriented programming techniques, use errors to handle user input, and to improve command of the Ruby language. 
+###Goals
+0. Create a playable checkers game
+0. Pratice Object Oriented Programming techniques
+0. Use errors/regex to handle user input
+0. Improve command of the Ruby language
 
 ###Instructions
+Simply open up pry/irb in the relevant directory and load the "game.rb" file. A new game will automatically launch with instructions on how to play. Standard checkers rules. 
